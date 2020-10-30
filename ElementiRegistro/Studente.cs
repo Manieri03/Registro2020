@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ElementiRegistro
 {
-    class Studente
+    public class Studente
     {
         public string Nome { get; private set; }
         public string Cognome { get; private set; }

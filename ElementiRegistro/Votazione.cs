@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ElementiRegistro
 {
-    class Votazione
+    public class Votazione
     {
-        public double Valutazione{ get; private set; }
+        public double Valutazione;
         public DateTime Data { get; private set; }
 
         private Studente Studente;
@@ -29,6 +29,11 @@ namespace ElementiRegistro
             }
             else
                 return false;
+        }
+
+        public double GetVoto()
+        {
+            return Valutazione;
         }
     }
 }

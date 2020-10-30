@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ElementiRegistro
 {
@@ -6,6 +7,7 @@ namespace ElementiRegistro
     {
         private int Anno;
         private string Sezione;
+        List<Studente> studenti = new List<Studente>();
 
         public Classe(int anno, string sezione)
         {
@@ -21,10 +23,21 @@ namespace ElementiRegistro
         }
 
 
-        //public Votazione TrovaVotoMassimo()
-        //{
-
-        //}
+        public Votazione TrovaVotoMassimo()
+        {
+            double max = -1;
+            int c = 0;
+            for (int i = 0; i < studenti.Count; i++)
+            {
+                Votazione votomax = studenti[i].TrovaVotoMassimo();
+                if (votomax.GetVoto() > max)
+                {
+                    max = votomax.GetVoto();
+                    c = i;
+                }
+            }
+            return studenti[c].TrovaVotoMassimo();
+        }
         
             
 

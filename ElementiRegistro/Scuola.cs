@@ -29,9 +29,20 @@ namespace ElementiRegistro
             return m;
         }
 
-        //public Votazione TrovaVotoMassimo()
-        //{
-         
-        //}
+        public Votazione TrovaVotoMassimo()
+        {
+            double max = -1;
+            int c = 0;
+            for (int i = 0; i < Classi.Count; i++)
+            {
+                Votazione votomax = Classi[i].TrovaVotoMassimo();
+                if (votomax.GetVoto() > max)
+                {
+                    max = votomax.GetVoto();
+                    c = i;
+                }
+            }
+            return Classi[c].TrovaVotoMassimo();
+        }
     }
 }
