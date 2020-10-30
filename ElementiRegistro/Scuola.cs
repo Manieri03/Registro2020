@@ -31,7 +31,7 @@ namespace ElementiRegistro
 
         //public Votazione TrovaVotoMassimo()
         //{
-
+         
         //}
     }
 }
