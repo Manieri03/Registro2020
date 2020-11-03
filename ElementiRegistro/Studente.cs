@@ -44,5 +44,29 @@ namespace ElementiRegistro
             return massimo;
         }
 
+        public Votazione TrovaVotoMinimo()
+        {
+            double min = 0;
+            Materia minm = new Materia("");
+            Studente mins = new Studente(" ", " ");
+
+            Votazione minimo = new Votazione(minm, mins, 0);
+
+            for (int i = 0; i < Voti.Count; i++)
+            {
+                if (Voti[i].Valutazione > min)
+                {
+                    min = Voti[i].Valutazione;
+                    minimo = Voti[i];
+
+                }
+
+            }
+            return minimo;
+        }
+        public string NomeCompleto(Studente s)
+        {
+            return $"{s.Cognome}{s.Nome}, nato il {s.DataNascita}";
+        }
     }
 }

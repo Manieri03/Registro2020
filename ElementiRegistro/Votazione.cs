@@ -35,5 +35,9 @@ namespace ElementiRegistro
         {
             return Valutazione;
         }
+        public string Descrizione(Votazione v)
+        {
+            return $"{v.Valutazione}, Valutazione del {v.Data} di {v.Studente} in {v.M}";
+        }
     }
 }

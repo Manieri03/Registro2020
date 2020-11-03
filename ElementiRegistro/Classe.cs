@@ -38,8 +38,23 @@ namespace ElementiRegistro
             }
             return studenti[c].TrovaVotoMassimo();
         }
-        
-            
+        public Votazione TrovaVotoMinimo()
+        {
+            double min = 11;
+            int c = 0;
+            for (int i = 0; i < studenti.Count; i++)
+            {
+                Votazione votomin = studenti[i].TrovaVotoMinimo();
+                if (votomin.GetVoto() < min)
+                {
+                    min = votomin.GetVoto();
+                    c = i;
+                }
+            }
+            return studenti[c].TrovaVotoMinimo();
+
+        }
+
 
 
     }
