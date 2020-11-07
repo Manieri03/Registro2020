@@ -15,6 +15,7 @@ namespace ElementiRegistro
         {
             this.Nome = nome;
             Classi = new List<Classe>();
+            Materie = new List<Materia>();
         }
         public Classe CreaClasse(int anno, string sezione)
         {

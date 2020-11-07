@@ -16,6 +16,7 @@ namespace ElementiRegistro
         {
             this.Nome = nome;
             this.Cognome = cognome;
+            Voti = new List<Votazione>();
         }
 
         public void AddVoto(Votazione v)
@@ -67,6 +68,18 @@ namespace ElementiRegistro
         public string NomeCompleto(Studente s)
         {
             return $"{s.Cognome}{s.Nome}, nato il {s.DataNascita}";
+        }
+
+        public Votazione TrovaVotoPiuRecente()
+        {
+            DateTime data = new DateTime(2020, 9, 11);
+            int c = 0;
+            for(int i = 0; i < Voti.Count; i++)
+            {
+                data = Voti[i].Data;
+                c = i;
+            }
+            return Voti[c];
         }
     }
 }

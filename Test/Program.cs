@@ -10,14 +10,14 @@ namespace Test
 
             Scuola scuola = new Scuola("RosselliRasetti");
 
-            Classe c = new Classe(4, "AI");
+            Classe c = scuola.CreaClasse(4, "AI");
             Studente s1 = new Studente("Alessio", "Manieri");
             Studente s2 = new Studente("Filippo", "Pepe");
 
-            Materia m1 = new Materia("Informatica");
-            Materia m2 = new Materia("Italiano");
-            Materia m3 = new Materia("Matematica");
-            Materia m4 = new Materia("Religione");
+            Materia m1 = scuola.CreaMateria("Informatica");
+            Materia m2 = scuola.CreaMateria("Italiano");
+            Materia m3 = scuola.CreaMateria("Matematica");
+            Materia m4 = scuola.CreaMateria("Religione");
 
             Votazione v1 = new Votazione(m1, s1, 8);
             Votazione v2 = new Votazione(m3, s1, 9);
@@ -29,6 +29,9 @@ namespace Test
 
             s2.AddVoto(v2);
             s2.AddVoto(v4);
+
+            c.AddStudente(s1);
+            c.AddStudente(s1);
 
             Console.WriteLine(s1.TrovaVotoMassimo());
 

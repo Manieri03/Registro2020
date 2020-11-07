@@ -9,7 +9,7 @@ namespace ElementiRegistro
         private string Sezione;
         List<Studente> studenti = new List<Studente>();
 
-        public Classe(int anno, string sezione)
+        internal Classe(int anno, string sezione)
         {
             this.Anno = anno;
             this.Sezione = sezione;
@@ -20,6 +20,11 @@ namespace ElementiRegistro
             string annostring = Anno.ToString();
             return annostring + Sezione;
 
+        }
+
+        public void AddStudente(Studente s)
+        {
+            studenti.Add(s);
         }
 
 
